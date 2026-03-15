@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Bencloud — Кто солгал?</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+  <header>
+    <h1>Bencloud</h1>
+    <p>Мини‑детектив: прочитай алibi и реши, кто врёт.</p>
+  </header>
+
+  <main>
+    <section class="hud">
+      <div>Дело: <span id="caseTitle">—</span></div>
+      <button id="nextCaseBtn">Новое дело</button>
+    </section>
+
+    <section class="case-intro">
+      <p id="caseIntro"></p>
+      <ul id="factsList"></ul>
+    </section>
+
+    <section class="suspects" id="suspects"></section>
+
+    <section class="message">
+      <p id="message"></p>
+    </section>
+  </main>
+
+  <footer>
+    <p>&copy; Ben &amp; Timur</p>
+  </footer>
+
+  <script src="assets/js/game.js"></script>
+</body>
+</html>

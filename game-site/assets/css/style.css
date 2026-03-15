@@ -1,0 +1,156 @@
+:root {
+  --bg: #020617;
+  --panel: #0f172a;
+  --accent: #22c55e;
+  --accent-soft: rgba(34, 197, 94, 0.2);
+  --text: #e5e7eb;
+  --subtext: #9ca3af;
+  --danger: #ef4444;
+}
+
+* {
+  box-sizing: border-box;
+}
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: radial-gradient(circle at top, #0b1120, #020617 55%);
+  color: var(--text);
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+header,
+main,
+footer {
+  max-width: 900px;
+  margin: 0 auto;
+  padding: 16px;
+}
+
+header h1 {
+  margin: 16px 0 4px;
+  font-size: 2rem;
+}
+
+header p {
+  margin: 0;
+  color: var(--subtext);
+}
+
+.hud {
+  display: flex;
+  gap: 16px;
+  align-items: center;
+  margin: 16px 0;
+  padding: 8px 12px;
+  background: rgba(15, 23, 42, 0.8);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.hud div {
+  min-width: 80px;
+}
+
+button#nextCaseBtn {
+  margin-left: auto;
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.1s ease, background 0.1s ease;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3), 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+button#nextCaseBtn:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4), 0 6px 16px rgba(34, 197, 94, 0.35);
+}
+
+.case-intro {
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+#caseIntro {
+  margin-top: 0;
+}
+
+#factsList {
+  margin: 8px 0 0;
+  padding-left: 18px;
+  color: var(--subtext);
+}
+
+.suspects {
+  margin-top: 16px;
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(220px, 1fr));
+  gap: 12px;
+}
+
+.suspect-card {
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  cursor: pointer;
+  transition: transform 0.08s ease, box-shadow 0.12s ease, border-color 0.12s ease;
+}
+
+.suspect-card:hover {
+  transform: translateY(-1px);
+  box-shadow: 0 10px 25px rgba(15, 23, 42, 0.7);
+  border-color: rgba(34, 197, 94, 0.5);
+}
+
+.suspect-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.1rem;
+}
+
+.suspect-card p {
+  margin: 0;
+  color: var(--subtext);
+}
+
+.suspect-card.correct {
+  border-color: var(--accent);
+}
+
+.suspect-card.wrong {
+  border-color: var(--danger);
+}
+
+.message {
+  margin-top: 12px;
+  min-height: 32px;
+}
+
+#message {
+  margin: 0;
+  color: var(--subtext);
+}
+
+#message.win {
+  color: var(--accent);
+}
+
+#message.lose {
+  color: var(--danger);
+}
+
+footer {
+  margin-top: auto;
+  padding-bottom: 24px;
+  color: var(--subtext);
+  font-size: 0.9rem;
+}
