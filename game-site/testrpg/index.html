@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <title>Текстовая RPG — Fantasy Sekai</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="game">
+        <div id="stats">
+            <span class="stat">ОПЫТ : <b><span id="xpText">0</span></b></span>
+            <span class="stat">ЗДОРОВЬЕ : <b><span id="hpText">100</span></b></span>
+            <span class="stat">Монеты : <b><span id="coinText">50</span></b></span>
+        </div>
+
+        <div id="controls">
+            <button id="button1">Идти в торговый район</button>
+            <button id="button2">Идти в пещеру</button>
+            <button id="button3">Сразиться с Владыкой Демонов</button>
+        </div>
+
+        <div id="monsterStats">
+            <span class="stat">Имя монстра : <b><span id="monsterName"></span></b>
+            <span class="stat">Здоровье монстра : <b><span id="monsterHP"></span></b>
+        </div>
+
+        <div id="text">
+            Добро пожаловать в Fantasy Sekai! Твоя задача — победить Владыку Демонов, который живёт в этом мире и нарушает его баланс.
+            Сейчас ты находишься в центре городской площади. Куда хочешь пойти?
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>

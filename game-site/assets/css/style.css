@@ -40,6 +40,48 @@ header p {
   color: var(--subtext);
 }
 
+/* Главное меню */
+.menu h2 {
+  margin-top: 0;
+}
+
+.game-card {
+  margin-top: 12px;
+  padding: 16px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 12px;
+  border: 1px solid rgba(148, 163, 184, 0.4);
+  box-shadow: 0 12px 30px rgba(15, 23, 42, 0.8);
+}
+
+.game-card h3 {
+  margin: 0 0 4px;
+  font-size: 1.3rem;
+}
+
+.game-card p {
+  margin: 0 0 12px;
+  color: var(--subtext);
+}
+
+.game-card button {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+  transition: transform 0.05s ease, box-shadow 0.1s ease, background 0.1s ease;
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3), 0 10px 25px rgba(34, 197, 94, 0.3);
+}
+
+.game-card button:active {
+  transform: translateY(1px);
+  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4), 0 6px 16px rgba(34, 197, 94, 0.35);
+}
+
+/* Общий HUD для игр */
 .hud {
   display: flex;
   gap: 16px;
@@ -55,25 +97,52 @@ header p {
   min-width: 80px;
 }
 
-button#nextCaseBtn {
-  margin-left: auto;
-  padding: 8px 16px;
+#backToMenuBtn,
+#backToMenuRpgBtn {
+  padding: 6px 12px;
   border-radius: 999px;
   border: none;
-  background: var(--accent);
-  color: #022c22;
-  font-weight: 600;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--subtext);
   cursor: pointer;
-  transition: transform 0.05s ease, box-shadow 0.1s ease, background 0.1s ease;
-  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.3), 0 10px 25px rgba(34, 197, 94, 0.3);
+  margin-right: 8px;
 }
 
-button#nextCaseBtn:active {
-  transform: translateY(1px);
-  box-shadow: 0 0 0 1px rgba(34, 197, 94, 0.4), 0 6px 16px rgba(34, 197, 94, 0.35);
+#backToMenuBtn:hover,
+#backToMenuRpgBtn:hover {
+  color: var(--text);
+}
+
+/* Детективная игра */
+
+.case-list {
+  margin-top: 8px;
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+#caseList {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+#caseList li {
+  cursor: pointer;
+  margin-bottom: 4px;
+}
+
+#caseList li span {
+  color: var(--subtext);
+}
+
+#caseList li.active span {
+  color: var(--accent);
 }
 
 .case-intro {
+  margin-top: 12px;
   padding: 12px;
   background: rgba(15, 23, 42, 0.7);
   border-radius: 8px;
@@ -146,6 +215,88 @@ button#nextCaseBtn:active {
 
 #message.lose {
   color: var(--danger);
+}
+
+/* RPG-игра */
+
+.rpg-setup {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+.rpg-classes {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+  margin-bottom: 8px;
+}
+
+.rpg-class-btn {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: 1px solid rgba(148, 163, 184, 0.5);
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.rpg-class-btn.active {
+  border-color: var(--accent);
+  color: var(--accent);
+}
+
+#rpgStats {
+  margin: 4px 0 8px;
+  color: var(--subtext);
+}
+
+#startRpgBtn {
+  padding: 8px 16px;
+  border-radius: 999px;
+  border: none;
+  background: var(--accent);
+  color: #022c22;
+  font-weight: 600;
+  cursor: pointer;
+}
+
+.rpg-scene {
+  margin-top: 12px;
+  padding: 12px;
+  background: rgba(15, 23, 42, 0.7);
+  border-radius: 8px;
+  border: 1px solid rgba(148, 163, 184, 0.2);
+}
+
+#rpgChoices {
+  margin: 8px 0 0;
+  padding-left: 18px;
+}
+
+#rpgChoices li {
+  margin-bottom: 6px;
+}
+
+#rpgChoices button {
+  padding: 6px 12px;
+  border-radius: 999px;
+  border: none;
+  background: rgba(15, 23, 42, 0.9);
+  color: var(--text);
+  cursor: pointer;
+}
+
+.rpg-log {
+  margin-top: 10px;
+  padding: 8px;
+  background: rgba(15, 23, 42, 0.9);
+  border-radius: 6px;
+  border: 1px solid rgba(148, 163, 184, 0.3);
+  color: var(--subtext);
+  font-size: 0.9rem;
 }
 
 footer {

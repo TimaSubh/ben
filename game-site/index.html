@@ -3,35 +3,89 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>Bencloud — Кто солгал?</title>
+  <title>Бенклауд — Игры</title>
   <link rel="stylesheet" href="assets/css/style.css" />
 </head>
 <body>
   <header>
-    <h1>Bencloud</h1>
-    <p>Мини‑детектив: прочитай алibi и реши, кто врёт.</p>
+    <h1>Бенклауд</h1>
+    <p>Выбери игру.</p>
   </header>
 
   <main>
-    <section class="hud">
-      <div>Дело: <span id="caseTitle">—</span></div>
-      <button id="nextCaseBtn">Новое дело</button>
+    <!-- Главное меню с выбором игр -->
+    <section id="mainMenu" class="menu">
+      <h2>Игры</h2>
+      <div class="game-card" id="gameDetectiveCard">
+        <h3>Кто солгал?</h3>
+        <p>Мини‑детектив: читай алиби, анализируй факты и выбирай, кто врёт.</p>
+        <button id="playDetectiveBtn" class="game-btn">Играть</button>
+      </div>
+      <div class="game-card" id="gameRpgCard">
+        <h3>Уличная магия</h3>
+        <p>Современный город с магией: выбери класс и решай, рискнуть или отступить.</p>
+        <button id="playRpgBtn" class="game-btn">Играть</button>
+      </div>
+      <div class="game-card" id="gameTestRpgCard">
+        <h3>Тест RPG</h3>
+        <p>Готовый шаблон текстовой RPG: классическое фэнтези с монстрами и боссом.</p>
+        <button id="playTestRpgBtn" class="game-btn" onclick="location.href='/testrpg/';">Играть</button>
+      </div>
     </section>
 
-    <section class="case-intro">
-      <p id="caseIntro"></p>
-      <ul id="factsList"></ul>
+    <!-- Экран детективной игры -->
+    <section id="gameScreen" class="game" style="display: none;">
+      <section class="hud">
+        <button id="backToMenuBtn">← В меню</button>
+        <div>Дело: <span id="caseTitle">—</span></div>
+      </section>
+
+      <section class="case-list">
+        <h2>Список дел</h2>
+        <ul id="caseList"></ul>
+      </section>
+
+      <section class="case-intro">
+        <p id="caseIntro"></p>
+        <ul id="factsList"></ul>
+      </section>
+
+      <section class="suspects" id="suspects"></section>
+
+      <section class="message">
+        <p id="message"></p>
+      </section>
     </section>
 
-    <section class="suspects" id="suspects"></section>
+    <!-- Экран RPG-игры -->
+    <section id="rpgScreen" class="game" style="display: none;">
+      <section class="hud">
+        <button id="backToMenuRpgBtn">← В меню</button>
+        <div>Класс: <span id="rpgClass">—</span></div>
+      </section>
 
-    <section class="message">
-      <p id="message"></p>
+      <section class="rpg-setup">
+        <h2>Создание персонажа</h2>
+        <div class="rpg-classes">
+          <button class="rpg-class-btn" data-class="mage">Маг</button>
+          <button class="rpg-class-btn" data-class="fighter">Боец</button>
+          <button class="rpg-class-btn" data-class="ranger">Стрелок</button>
+        </div>
+        <p id="rpgStats"></p>
+        <button id="startRpgBtn">Начать приключение</button>
+      </section>
+
+      <section class="rpg-scene" id="rpgScene" style="display: none;">
+        <h2 id="rpgSceneTitle"></h2>
+        <p id="rpgSceneText"></p>
+        <ul id="rpgChoices"></ul>
+        <div class="rpg-log" id="rpgLog"></div>
+      </section>
     </section>
   </main>
 
   <footer>
-    <p>&copy; Ben &amp; Timur</p>
+    <p>&copy; Бен &amp; Тимур</p>
   </footer>
 
   <script src="assets/js/game.js"></script>
